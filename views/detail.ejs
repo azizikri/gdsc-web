@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Gunakan include untuk mengimport dan menggunakan file head.ejs  -->
+  <%- include('./includes/head') %>
+  <body style="background-color: whitesmoke">
+    <!-- Gunakan include untuk mengimport dan menggunakan file navbar.ejs  -->
+    <%- include('./includes/navbar.ejs') %>
+
+    <div class="container">
+      <div class="row mt-5 justify-content-center">
+        <div class="col-lg-3">
+          <img src="<%= book.image %> " class="img-thumbnail" alt="" />
+        </div>
+        <div class="col-lg-4">
+          <h6 class="card-subtitle mb-2 text-muted"><%= book.penulis %></h6>
+          <h5 class="card-title fs-2 fw-normal"><%= book.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Rp.<%= book.harga %></h6>
+          <div class="action-button d-flex justify-content-end">
+            <a href="/edit/<%= book._id %>" class="mr-3">
+              <button class="btn btn-warning">Edit</button>
+            </a>
+
+            <form action="/delete" method="POST">
+              <button class="btn btn-danger">Delete</button>
+              <input type="hidden" name="id" value="<%= book._id %>" />
+            </form>
+          </div>
+          <hr />
+          <div class="row mb-5">
+            <div class="col-lg-12">
+              <h6 class="card-title">Deskripsi Buku</h6>
+              <p><%= book.deskripsi %></p>
+            </div>
+            <h6 class="card-title mt-3">Detail Buku</h6>
+            <div class="col-lg-6">
+              <h6 class="card-subtitle mt-2 text-muted">Jumlah Halaman</h6>
+              <span><%= book.jumlahHalaman %> </span>
+              <h6 class="card-subtitle mt-2 text-muted">Tanggal Terbit</h6>
+              <span><%= book.tanggalTerbit %> </span>
+              <h6 class="card-subtitle mt-2 text-muted">ISBN</h6>
+              <span><%= book.isbn %> </span>
+              <h6 class="card-subtitle mt-2 text-muted">Bahasa</h6>
+              <span><%= book.bahasa %> </span>
+            </div>
+            <div class="col-lg-6">
+              <h6 class="card-subtitle mt-2 text-muted">Penerbit</h6>
+              <span><%= book.penerbit %> </span>
+              <h6 class="card-subtitle mt-2 text-muted">Berat</h6>
+              <span><%= book.berat %> </span>
+              <h6 class="card-subtitle mt-2 text-muted">Lebar</h6>
+              <span><%= book.lebar %> </span>
+              <h6 class="card-subtitle mt-2 text-muted">Panjang</h6>
+              <span><%= book.panjang %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gunakan include untuk mengimport dan menggunakan file footer.ejs  -->
+    <%- include('./includes/footer.ejs') %>
+  </body>
+</html>

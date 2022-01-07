@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Gunakan include untuk mengimport dan menggunakan file head.ejs  -->
+<%- include('./includes/head.ejs') %> 
+
+<body style="background-color: whitesmoke;">
+  <!-- Gunakan include untuk mengimport dan menggunakan file navbar.ejs  -->
+  <%- include('./includes/navbar.ejs') %> 
+
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-8">
+        <h4 class="fs-2">Tambah Buku</h4>
+      </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+      <div class="col-lg-4">
+        <form action="/tambah" method="post">
+          <div class="form-group mb-3">
+            <label class="fs-5">Judul Buku</label>
+            <input name="title" placeholder="Masukan Judul Buku" type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label class="fs-5">Gambar Buku</label>
+            <input name="image" placeholder="Masukan Link Gambar Buku" type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label class="fs-5">Penulis Buku</label>
+            <input name="penulis" placeholder="Masukan Penulis Buku" type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label class="fs-5">Penerbit</label>
+            <input name="penerbit" placeholder="Masukan Penerbit Buku" type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label class="fs-5">Tanggal Terbit</label>
+            <input name="tanggalTerbit" placeholder="Masukan Tanggal Terbit Buku" type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label class="fs-5">Jumlah Halaman</label>
+            <input name="jumlahHalaman" placeholder="Masukan Halaman Buku" type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label class="fs-5">Deskripsi</label>
+            <textarea name="deskripsi" placeholder="Masukan Deskripsi Buku" name="" class="form-control" cols="30" rows="3"></textarea>
+          </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group mb-3">
+          <label class="fs-5">Harga</label>
+          <input name="harga" placeholder="Masukan Harga Buku" type="number" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label class="fs-5">ISBN</label>
+          <input name="isbn" placeholder="Masukan No. ISBN Buku" type="number" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label class="fs-5">Bahasa</label>
+          <input name="bahasa" placeholder="Masukan Bahasa Buku" type="text" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label class="fs-5">Berat</label>
+          <input name="berat" placeholder="Masukan Berat Buku" type="text" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label class="fs-5">Lebar</label>
+          <input name="lebar" placeholder="Masukan Lebar Buku" type="text" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label class="fs-5">Panjang</label>
+          <input name="panjang" placeholder="Masukan Panjang Buku" type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3 mb-5">
+      <div class="col-lg-8 d-flex justify-content-end">
+        <button class="btn btn-primary">Simpan</button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gunakan include untuk mengimport dan menggunakan file footer.ejs  -->
+  <%- include('./includes/footer.ejs') %> 
+</body>
+
+</html>
